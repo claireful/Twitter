@@ -227,39 +227,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zg4-j1-2qK">
-                                <rect key="frame" x="16" y="216" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-fT-4zi">
-                                <rect key="frame" x="298" y="397" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Tweet"/>
-                                <connections>
-                                    <action selector="didTapPost:" destination="P51-dS-YXJ" eventType="touchUpInside" id="G8M-Kb-W76"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-rs-ded">
-                                <rect key="frame" x="296" y="74" width="80" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-rs-ded">
+                                <rect key="frame" x="15" y="35" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0U8-SO-TmF"/>
+                                    <constraint firstAttribute="width" constant="30" id="mu3-um-jIi"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="close-icon"/>
                                 <connections>
                                     <action selector="onClose:" destination="P51-dS-YXJ" eventType="touchUpInside" id="JdY-pL-zpO"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GzG-yo-L1h" customClass="RSKPlaceholderTextView">
+                                <rect key="frame" x="16" y="87" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-fT-4zi">
+                                <rect key="frame" x="316" y="35" width="44" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Tweet">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapPost:" destination="P51-dS-YXJ" eventType="touchUpInside" id="G8M-Kb-W76"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udZ-6z-YLU">
+                                <rect key="frame" x="267" y="40" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Q1O-fT-4zi" secondAttribute="trailing" constant="15" id="HD8-NK-9rk"/>
+                            <constraint firstItem="Q1O-fT-4zi" firstAttribute="centerY" secondItem="Q4O-rs-ded" secondAttribute="centerY" id="HZs-TZ-J43"/>
+                            <constraint firstItem="udZ-6z-YLU" firstAttribute="centerY" secondItem="Q4O-rs-ded" secondAttribute="centerY" id="K1I-Be-xeL"/>
+                            <constraint firstItem="Q4O-rs-ded" firstAttribute="top" secondItem="Pzm-EZ-1TW" secondAttribute="bottom" constant="15" id="Yyf-9E-tD9"/>
+                            <constraint firstItem="Q1O-fT-4zi" firstAttribute="leading" secondItem="udZ-6z-YLU" secondAttribute="trailing" constant="20" id="ZYu-90-ppk"/>
+                            <constraint firstItem="Q4O-rs-ded" firstAttribute="leading" secondItem="XmY-sE-e9o" secondAttribute="leading" constant="15" id="b78-9p-WEi"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="umq-m8-sCa" appends="YES" id="sSt-69-qjr"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="composeTextView" destination="zg4-j1-2qK" id="aWX-Kl-jsQ"/>
+                        <outlet property="composeTextView" destination="GzG-yo-L1h" id="TtX-Eu-IJK"/>
+                        <outlet property="countLabel" destination="udZ-6z-YLU" id="rcZ-ew-4yR"/>
+                        <outlet property="tweetButton" destination="Q1O-fT-4zi" id="vbH-ox-oUx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6V8-Dc-3Yf" userLabel="First Responder" sceneMemberID="firstResponder"/>

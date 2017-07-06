@@ -91,6 +91,10 @@ class TweetCell: UITableViewCell {
             usernameTextLabel.text = tweet.user.name
             let profURL = URL(string: tweet.user.profilePicString!)
             profileImageView.af_setImage(withURL: profURL!)
+            //make circular image
+            profileImageView.layer.masksToBounds = false
+            profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+            profileImageView.clipsToBounds = true
             handleTextLabel.text = tweet.user.screenName
                 retweetButton.isSelected = tweet.retweeted
                 favButton.isSelected = tweet.favorited!
