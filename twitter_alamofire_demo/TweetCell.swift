@@ -9,9 +9,15 @@
 import UIKit
 import AlamofireImage
 
+protocol TweetCellDelegate: class {
+    // TODO: Add required methods the delegate needs to implement
+    func tweetCell(_ tweetCell: TweetCell, didTap user: User)
+}
+
 class TweetCell: UITableViewCell {
     
     //Variables
+    weak var delegate: TweetCellDelegate?
     
     //Outlets
     @IBOutlet weak var tweetTextLabel: UILabel!
@@ -102,15 +108,22 @@ class TweetCell: UITableViewCell {
             favButton.setTitle(String(tweet.favoriteCount!), for: .normal)
             retweetButton.setTitle(String(tweet.retweetCount), for: .normal)
             
-            
-            
-            
         }
     }
+    
+    func didTapUserProfile(_ sender: UITapGestureRecognizer) {
+        //call method on delegate
+        delegate?.tweetCell(self, didTap: tweet.user)
+    }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let profileTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTapUserProfile(_:)))
+        profileImageView.addGestureRecognizer(profileTapGestureRecognizer)
+        profileImageView.isUserInteractionEnabled = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

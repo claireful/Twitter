@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate {
+class TimelineViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, ComposeViewControllerDelegate, TweetCellDelegate {
     
     var tweets: [Tweet] = []
     
@@ -18,6 +18,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         //not really refresh but give user feedback
         tweets.insert(post, at: 0)
         self.tableView.reloadData()
+    }
+    
+    func tweetCell(_ tweetCell: TweetCell, didTap user: User) {
+        // TODO: Perform segue to profile view controller
+        performSegue(withIdentifier: "profileSegue", sender: user)
     }
 
     
@@ -66,6 +71,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         
         cell.tweet = tweets[indexPath.row]
+        cell.delegate = self
         
         return cell
     }
@@ -93,8 +99,15 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-        let vc = segue.destination as! ComposeViewController
-        vc.delegate = self as! ComposeViewControllerDelegate
+        if (segue.identifier == "composeSegue") {
+            let vc = segue.destination as! ComposeViewController
+            vc.delegate = self as! ComposeViewControllerDelegate
+        } else if (segue.identifier == "profileSegue") {
+            let vc = segue.destination as! ProfileViewController
+            vc.thisUser = sender as! User
+            
+        }
+        
      }
     
     
