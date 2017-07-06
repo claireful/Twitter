@@ -15,17 +15,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     func did(post: Tweet) {
+        //not really refresh but give user feedback
         tweets.insert(post, at: 0)
         self.tableView.reloadData()
-//        APIManager.shared.getHomeTimeLine { (tweets, error) in
-//            if let tweets = tweets {
-//                self.tweets = tweets
-//                self.tableView.reloadData()
-//            } else if let error = error {
-//                print("Error getting home timeline: " + error.localizedDescription)
-//            }
-//        }
-        
     }
 
     
@@ -35,8 +27,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        //tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         //initialize refreshcontrol
         let refreshControl = UIRefreshControl()

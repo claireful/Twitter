@@ -22,7 +22,7 @@ class User {
     init(dictionary: [String: Any]) {
         name = dictionary["name"] as? String
         screenName = dictionary["screen_name"] as? String
-        profilePicString = dictionary["profile_image_url"] as? String
+        profilePicString = dictionary["profile_image_url_https"] as? String
         //initialize extra properties
 
     }

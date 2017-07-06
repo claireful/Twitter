@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TweetCell: UITableViewCell {
     
@@ -26,18 +27,28 @@ class TweetCell: UITableViewCell {
         //if retweetButton.isSelected
         if retweetButton.isSelected == false {
             tweet.retweetCount += 1
+            print("hi")
             retweetButton.setTitle(String(tweet.retweetCount), for: .normal)
+            print("ok")
             APIManager.shared.retweet(tweet) { (tweet: Tweet?, error: Error?) in
                 if let  error = error {
-                    print("Error retweetingh tweet: \(error.localizedDescription)")
+                    print("Error retweeting tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
                     print("Successfully retweeted the following Tweet: \n\(tweet.text)")
                 }
             }
+            print("hey")
             
         } else {
             tweet.retweetCount -= 1
             retweetButton.setTitle(String(tweet.retweetCount), for: .normal)
+            APIManager.shared.unretweet(tweet) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error unretweeting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully unretweeted the following Tweet: \n\(tweet.text)")
+                }
+            }
         }
         retweetButton.isSelected = !retweetButton.isSelected
         tweet.retweeted = !tweet.retweeted
@@ -78,12 +89,13 @@ class TweetCell: UITableViewCell {
             tweetTextLabel.text = tweet.text
             timeTextLabel.text = tweet.createdAtString
             usernameTextLabel.text = tweet.user.name
+            let profURL = URL(string: tweet.user.profilePicString!)
+            profileImageView.af_setImage(withURL: profURL!)
             handleTextLabel.text = tweet.user.screenName
                 retweetButton.isSelected = tweet.retweeted
                 favButton.isSelected = tweet.favorited!
             
             favButton.setTitle(String(tweet.favoriteCount!), for: .normal)
-            
             retweetButton.setTitle(String(tweet.retweetCount), for: .normal)
             
             
