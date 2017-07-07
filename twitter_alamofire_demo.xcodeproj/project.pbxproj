@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		49101B501F0EF3CB000068EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49101B4F1F0EF3CB000068EB /* ProfileViewController.swift */; };
+		496CED991F0FF43000A41557 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CED981F0FF43000A41557 /* AvatarImageView.swift */; };
+		496CED9D1F0FF4A200A41557 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496CED9C1F0FF4A200A41557 /* FXBlurView.m */; };
 		4982C4821F0D5C99003EDC1C /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982C4811F0D5C99003EDC1C /* ComposeViewController.swift */; };
 		547221C96829E6F537FCE2FE /* Pods_twitter_alamofire_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCA05DC47A45B9943F23F5F /* Pods_twitter_alamofire_demoUITests.framework */; };
 		6C028F67F4B75B9CE911AB20 /* Pods_twitter_alamofire_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001F2EB27736B82E6AF0082B /* Pods_twitter_alamofire_demo.framework */; };
@@ -48,6 +50,10 @@
 		3FCA05DC47A45B9943F23F5F /* Pods_twitter_alamofire_demoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_alamofire_demoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434659329CA4ED45495F750D /* Pods-twitter_alamofire_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demo/Pods-twitter_alamofire_demo.debug.xcconfig"; sourceTree = "<group>"; };
 		49101B4F1F0EF3CB000068EB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		496CED981F0FF43000A41557 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		496CED9A1F0FF47500A41557 /* FXBlurView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		496CED9B1F0FF4A200A41557 /* twitter_alamofire_demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "twitter_alamofire_demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		496CED9C1F0FF4A200A41557 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		4982C4811F0D5C99003EDC1C /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		4DFA54CBFE40EC0C9E20906F /* Pods-twitter_alamofire_demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demoTests/Pods-twitter_alamofire_demoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		55D629C137D93399CE6DE905 /* Pods-twitter_alamofire_demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demo/Pods-twitter_alamofire_demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49101B531F0FF353000068EB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				496CED981F0FF43000A41557 /* AvatarImageView.swift */,
+				496CED9A1F0FF47500A41557 /* FXBlurView.h */,
+				496CED9C1F0FF4A200A41557 /* FXBlurView.m */,
+				496CED9B1F0FF4A200A41557 /* twitter_alamofire_demo-Bridging-Header.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		A7EAFA57FA35C74D37A8766E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +169,7 @@
 		ED1AFD2F1E942B2500FD4B90 /* twitter_alamofire_demo */ = {
 			isa = PBXGroup;
 			children = (
+				49101B531F0FF353000068EB /* Helpers */,
 				ED1AFD341E942B2500FD4B90 /* Main.storyboard */,
 				ED1D23501EF7650B00C51ACC /* API */,
 				ED1D23491EF6E38100C51ACC /* Models */,
@@ -298,6 +316,7 @@
 					ED1AFD2C1E942B2500FD4B90 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 5JTWQYEJ7H;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -510,9 +529,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1D23461EF63C1D00C51ACC /* User.swift in Sources */,
+				496CED991F0FF43000A41557 /* AvatarImageView.swift in Sources */,
 				ED1D234E1EF71C4B00C51ACC /* TweetCell.swift in Sources */,
 				ED1D23481EF6E37700C51ACC /* Tweet.swift in Sources */,
 				4982C4821F0D5C99003EDC1C /* ComposeViewController.swift in Sources */,
+				496CED9D1F0FF4A200A41557 /* FXBlurView.m in Sources */,
 				ED1AFD611E94496E00FD4B90 /* LoginViewController.swift in Sources */,
 				ED1AFD5F1E94421000FD4B90 /* APIManager.swift in Sources */,
 				49101B501F0EF3CB000068EB /* ProfileViewController.swift in Sources */,
@@ -672,12 +693,15 @@
 			baseConfigurationReference = 434659329CA4ED45495F750D /* Pods-twitter_alamofire_demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = twitter_alamofire_demo/twitter_alamofire_demo.entitlements;
 				DEVELOPMENT_TEAM = 5JTWQYEJ7H;
 				INFOPLIST_FILE = twitter_alamofire_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.claire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "twitter_alamofire_demo/twitter_alamofire_demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -687,12 +711,14 @@
 			baseConfigurationReference = 55D629C137D93399CE6DE905 /* Pods-twitter_alamofire_demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = twitter_alamofire_demo/twitter_alamofire_demo.entitlements;
 				DEVELOPMENT_TEAM = 5JTWQYEJ7H;
 				INFOPLIST_FILE = twitter_alamofire_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.claire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "twitter_alamofire_demo/twitter_alamofire_demo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

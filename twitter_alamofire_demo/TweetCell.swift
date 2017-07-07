@@ -101,7 +101,7 @@ class TweetCell: UITableViewCell {
             profileImageView.layer.masksToBounds = false
             profileImageView.layer.cornerRadius = profileImageView.frame.height/2
             profileImageView.clipsToBounds = true
-            handleTextLabel.text = tweet.user.screenName
+            handleTextLabel.text = "@\(tweet.user.screenName!)"
                 retweetButton.isSelected = tweet.retweeted
                 favButton.isSelected = tweet.favorited!
             
