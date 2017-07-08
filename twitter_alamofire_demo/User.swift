@@ -14,6 +14,9 @@ class User {
     var screenName: String?
     var profilePicString: String?
     //initialize extra properties
+    var backgroundPicString: String?
+    var followingCount: Int?
+    var followersCount: Int?
     
     //static property
     //static var current: User?
@@ -28,6 +31,12 @@ class User {
         screenName = dictionary["screen_name"] as? String
         profilePicString = dictionary["profile_image_url_https"] as? String
         //initialize extra properties
+        backgroundPicString = dictionary["profile_background_image_url_https"] as? String
+        followingCount = dictionary["friends_count"] as? Int
+        followersCount = dictionary["followers_count"] as? Int
+        
+        
+        
 
     }
     

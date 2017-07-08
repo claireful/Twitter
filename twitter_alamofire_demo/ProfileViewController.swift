@@ -28,7 +28,10 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UITableView
     @IBOutlet var headerImageView:UIImageView!
     @IBOutlet var headerBlurImageView:UIImageView!
     var blurredHeaderImageView:UIImageView?
-    
+    @IBOutlet var followingLabel: UILabel!
+    @IBOutlet var followersLabel: UILabel!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var handleLabel: UILabel!
     
     //protocols
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +51,15 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UITableView
         tableView.delegate = self
         scrollView.delegate = self
         print(thisUser?.name)
+        
+        usernameLabel.text = thisUser?.name
+        handleLabel.text = thisUser?.screenName
+        headerLabel.text = thisUser?.name
+        followersLabel.text = "Followers \((thisUser?.followersCount)!)"
+        followingLabel.text = "Following \((thisUser?.followingCount)!)"
+        let profURL = URL(string: (thisUser?.profilePicString!)!)
+        avatarImage.af_setImage(withURL: profURL!)
+        //make circular image
 
         // Do any additional setup after loading the view.
     }

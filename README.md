@@ -1,7 +1,7 @@
 # Project 4 - Twitter
 Twitter is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent: 18 hours spent in total
 
 ## User Stories
 
@@ -25,16 +25,15 @@ The following **optional** features are implemented:
 - [x] User should display the relative timestamp for each tweet "8m", "7h"
 - [x] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count.
 - [ ] Links in tweets are clickable
-- [ ] User can tap the profile image in any tweet to see another user's profile
+- [x] User can tap the profile image in any tweet to see another user's profile
 - [ ] Contains the user header view: picture and tagline
-- [ ] Contains a section with the users basic stats: # tweets, # following, # followers
+- [x] Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] Profile view should include that user's timeline
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 - [x] When composing, you should have a countdown in the upper right for the tweet limit.
 - [x] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
 - [ ] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet
-- [ ] Profile view should include that user's timeline
-- [ ] Pulling down the profile page should blur and resize the header image.
+- [x] Pulling down the profile page should blur and resize the header image.
 
 The following **additional** features are implemented:
 
