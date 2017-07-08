@@ -38,23 +38,48 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
+- [x] profile picture resizes as you scroll
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Wanted to implement details view
+2. Wanted to place timeline in profile and autolayout profile
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+ser sees app icon in home screen and styled launch screen
+1. User can sign in using OAuth login flow
+2. User can Logout
+3. User can view last 20 tweets from their home timeline
+<img src='http://i.imgur.com/fBoebXt.gif' />
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+4. In the home timeline, user can view tweet with the user profile picture, username, tweet text,and timestamp.
+5. User can pull to refresh.
+6. User can tap the retweet and favorite buttons in a tweet cell to retweet and/or favorite a tweet.
+7. User can compose a new tweet by tapping on a compose button.
+8. When composing, you should have a countdown in the upper right for the tweet limit.
+9. After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
+Pulling down the profile page should blur and resize the header image
+10. Using AutoLayout, the Tweet cell should adjust it's layout for iPhone 7, Plus and SE device sizes as well as accommodate device rotation.
+11. The current signed in user will be persisted across restarts
+12. User should display the relative timestamp for each tweet "8m", "7h"
+13. User should be able to unretweet and unfavorite and should decrement the retweet and favorite count.
+<img src='http://i.imgur.com/o9EaFMi.gif' />
+
+14. User can tap the profile image in any tweet to see another user's profile
+15. Contains a section with the users basic stats: # tweets, # following, # followers
+<img src='http://i.imgur.com/pyQEpZB.gif' />
+
+
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Trying to integrate someone's code on githib -- using both objective c and also swift'
 
 ## Credits
 
@@ -64,7 +89,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2017 Claire Chen
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
